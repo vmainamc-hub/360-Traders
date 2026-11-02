@@ -89,7 +89,7 @@ export function subscribeNewSystemTopics() {
 const getRedirectUri = () => `${window.location.origin}/callback`;
 
 const CONFIG = {
-    clientId:  '33ykZitbYuDLkIyluxFHu',
+    clientId:  '34xXPt5IBhYDWeznie5sH',
     authUrl:   'https://auth.deriv.com/oauth2/auth',
     tokenUrl:  'https://auth.deriv.com/oauth2/token',
     restBase:  'https://api.derivws.com/trading/v1',

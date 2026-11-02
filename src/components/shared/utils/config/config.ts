@@ -6,7 +6,7 @@ import brandConfig from '../../../../../brand.config.json';
 // Constants - Derived from brand.config.json
 // =============================================================================
 
-export const CLIENT_ID = '33tzpx1fN9o4cX4h5Nrnp';
+export const CLIENT_ID = '34xXPt5IBhYDWeznie5sH';
 
 // Dynamic redirect URI — always points to the current origin's /callback route.
 // This works on any domain (Replit dev, deployed, custom) without hardcoding.
