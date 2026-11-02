@@ -180,8 +180,9 @@ export async function startNewLogin() {
         code_challenge_method: 'S256',
     });
 
-    // Append prompt manually so the space is encoded as %20, not +
-    const loginUrl = CONFIG.authUrl + '?' + params.toString() + '&prompt=login%20consent';
+    // Deriv's OAuth 2.0 login uses the standard PKCE parameters only.
+    // Do not append a non-standard login/consent prompt.
+    const loginUrl = CONFIG.authUrl + '?' + params.toString();
     console.log('[NEW AUTH] Redirecting to:', loginUrl);
     window.location.href = loginUrl;
 }
