@@ -1,0 +1,301 @@
+.nd {
+    --nd-bg: #f2f3f4;
+    --nd-card: #ffffff;
+    --nd-ink: #0e0e0e;
+    --nd-muted: #6b7280;
+    --nd-line: #d6dadb;
+    --nd-accent: #0e7c86;
+    --nd-up: #00a79e;
+    --nd-down: #cc2e3d;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    overflow: auto;
+    background: var(--nd-bg);
+    color: var(--nd-ink);
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.nd *,
+.nd *::before,
+.nd *::after {
+    box-sizing: border-box;
+}
+.nd__main {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.nd__panel {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.nd__card,
+.nd__chart-card,
+.nd__trades {
+    background: var(--nd-card);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+.nd__chart-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 420px;
+}
+.nd__chart-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.nd__select {
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid var(--nd-line);
+    border-radius: 6px;
+    padding: 6px 8px;
+    background: #fff;
+    color: var(--nd-ink);
+    max-width: 100%;
+}
+.nd__price strong {
+    font-size: 20px;
+    margin-right: 8px;
+}
+.nd__up {
+    color: var(--nd-up);
+}
+.nd__down {
+    color: var(--nd-down);
+}
+.nd__status {
+    margin-left: auto;
+    color: var(--nd-muted);
+    font-size: 12px;
+}
+.nd__chart {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 260px;
+    border-radius: 6px;
+    background: #fafafa;
+    overflow: hidden;
+}
+.nd__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.nd__area {
+    fill: rgba(0, 0, 0, 0.07);
+}
+.nd__line {
+    stroke: #3a3f44;
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+}
+.nd__spot-line {
+    stroke: #3a3f44;
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+    vector-effect: non-scaling-stroke;
+}
+.nd__spot {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    background: #0e0e0e;
+    color: #fff;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.nd__axis {
+    position: absolute;
+    right: 6px;
+    color: var(--nd-muted);
+    font-size: 11px;
+}
+.nd__axis--hi {
+    top: 4px;
+}
+.nd__axis--lo {
+    bottom: 4px;
+}
+.nd__loading {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--nd-muted);
+}
+.nd__digits {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+}
+.nd__digit {
+    aspect-ratio: 1;
+    max-width: 62px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid #d0d3d6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+    background: #fff;
+}
+.nd__digit b {
+    font-size: 15px;
+}
+.nd__digit small {
+    font-size: 10px;
+    color: var(--nd-muted);
+}
+.nd__digit--max {
+    border-color: var(--nd-up);
+}
+.nd__digit--min {
+    border-color: var(--nd-down);
+}
+.nd__digit--last {
+    box-shadow: 0 0 0 3px rgba(14, 124, 134, 0.35);
+}
+.nd__trades h4 {
+    margin: 0 0 6px;
+}
+.nd__trades table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.nd__trades th,
+.nd__trades td {
+    text-align: left;
+    padding: 5px 6px;
+    border-bottom: 1px solid #eceeef;
+}
+.nd__muted {
+    color: var(--nd-muted);
+    margin: 0;
+}
+.nd__kinds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+.nd__kinds button,
+.nd__grid button,
+.nd__basis button,
+.nd__amount button {
+    border: 1px solid var(--nd-line);
+    background: #fff;
+    color: var(--nd-ink);
+    border-radius: 6px;
+    padding: 8px 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.nd button.is-active {
+    background: var(--nd-accent);
+    border-color: var(--nd-accent);
+    color: #fff;
+}
+.nd__label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--nd-muted);
+    font-weight: 600;
+}
+.nd__range {
+    width: 100%;
+    accent-color: var(--nd-accent);
+}
+.nd__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+.nd__basis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.nd__amount {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.nd__amount input {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: 16px;
+    padding: 7px;
+    border: 1px solid var(--nd-line);
+    border-radius: 6px;
+}
+.nd__payout {
+    margin-bottom: 6px;
+    color: var(--nd-muted);
+}
+.nd__payout b {
+    color: var(--nd-ink);
+    font-size: 16px;
+}
+.nd__buy {
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+.nd__buy--a {
+    background: var(--nd-up);
+}
+.nd__buy--b {
+    background: var(--nd-down);
+}
+.nd__buy:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+.nd__error {
+    color: var(--nd-down);
+    margin: 6px 0 0;
+    font-size: 12px;
+}
+.nd__notice {
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: #fff4d6;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .nd {
+        flex-direction: column;
+    }
+    .nd__panel {
+        flex: 0 0 auto;
+    }
+    .nd__chart-card {
+        min-height: 340px;
+    }
+}
